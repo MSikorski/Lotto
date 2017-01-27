@@ -1,23 +1,20 @@
-
 public class Powierzchnia {
-	int typ;
 	double a, b, c, d;
-	double xo, yo, zo, r;
-	public Powierzchnia(int typ, double a, double b, double c, double d){
-		if(typ==1){
-			this.typ=1;
-			this.a = a;
-			this.b = b;
-			this.c = c;
-			this.d = d;
-		}else if(typ==2){
-			this.typ=2;
-			this.xo=a;
-			this.yo=b;
-			this.zo=c;
-			this.d=d;
-		}
+
+	public Powierzchnia(double a, double b, double c, double d) {
+		this.a = a;
+		this.b = b;
+		this.c = c;
+		this.d = d;
 	}
-	public double Odleglosc()
-	
+	public Powierzchnia(int a, int b, int c, int d){
+		this.a = a;
+		this.b = b;
+		this.c = c;
+		this.d = d;
+	}
+
+	public double Odleglosc(Kulka kulka) {
+		return (Math.abs(a * kulka.x + b * kulka.y + c * kulka.z + d) / Math.pow((a * a + b * b + c * c), 0.5));
+	}
 }
